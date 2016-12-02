@@ -1,0 +1,29 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:XamDataGrid_IDataErrorInfo"
+        xmlns:igDP="http://infragistics.com/DataPresenter" x:Class="XamDataGrid_IDataErrorInfo.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <igDP:XamDataGrid DataSource="{Binding Orders}">
+            <igDP:XamDataGrid.FieldLayoutSettings>
+                <igDP:FieldLayoutSettings AutoGenerateFields="False"
+                                          SupportDataErrorInfo="RecordsAndCells"
+                                          DataErrorDisplayMode="ErrorIconAndHighlight"
+                                          AddNewRecordLocation="OnBottom" />
+            </igDP:XamDataGrid.FieldLayoutSettings>
+            <igDP:XamDataGrid.FieldLayouts>
+                <igDP:FieldLayout>
+                    <igDP:FieldLayout.Fields>
+                        <igDP:Field Name="Price" Label="単価"/>
+                        <igDP:Field Name="ProductName" Label="商品名"/>
+                        <igDP:Field Name="Quantity" Label="数量"/>
+                    </igDP:FieldLayout.Fields>
+                </igDP:FieldLayout>
+            </igDP:XamDataGrid.FieldLayouts>
+        </igDP:XamDataGrid>
+    </Grid>
+</Window>
